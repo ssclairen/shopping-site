@@ -1,0 +1,58 @@
+/* ショッピングガイド
+------------------------------------------------------------*/
+// ショッピングガイド
+.sguide{
+	img{
+		margin-bottom:1.0em;
+	}
+	.wrapperguidebox{
+		height:18em;
+		.guidebox{
+			height:100%;
+			float:left;
+			border-right:$color_main solid 2px;
+			background-color:#ffffff;
+			width:50%;
+			text-align:left;
+			padding:1em;
+			h3{
+				color:$color_sub;
+				margin-bottom:1em;
+				font-weight:bold;
+			}
+			dl{
+				padding:0 1em;
+				dt{
+					color:$color_sub;
+					font-size:1.2rem;
+					font-weight:bold;
+					&:before{
+					font-size:1rem;
+					content:"■　";
+					position: relative;
+					top: -0.1rem;
+					}
+				}
+				dd{
+					font-size:1.2rem;
+					margin-bottom:0.5em;
+				}
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width: $media_smart_phone_width){
+	.sguide{
+		.wrapperguidebox{
+			height:100%;
+			.guidebox{
+				float:none;
+				border-right:$color_main solid 0px;
+				width:100%;
+				margin-bottom:0.5em;
+			}
+		}
+	}
+}

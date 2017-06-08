@@ -1,0 +1,160 @@
+/* sidebar
+------------------------------------------------------------*/
+// サブメニュー
+#sidebar{
+	width:260px;
+	float:right;
+	.searchwin{
+		background-color:#ffffff;
+		width:100%;
+		padding-top:0.5em;
+		padding-bottom:1.5em;
+		margin-bottom:0.5em;
+		.blockimg{
+			width:80%;
+			margin:0 auto;
+		}
+		form{
+			width:100%;
+			dl{ 
+				
+				position:relative;
+				dt{
+					input{
+						display:block;
+						width:80%;
+						background-color: $color_main;
+						margin:0 auto;
+						font-size:1.1rem;
+						padding:0.5em 0;
+						padding-left:0.5em;
+					}
+				}
+				dd{	
+					input{
+						position:absolute;
+						right:30px;
+						bottom:8px;
+					}
+				}
+			}
+		}
+	}
+	.sidemenu{
+		margin-bottom:0.4em;
+		ul{
+			li{
+				a{									
+					@include menulistbox;
+					background-color:$color_sub;
+					font-size:1.2rem;
+					color:#ffffff;
+					&.menu1{
+						margin-bottom:0;
+					}
+					img{
+						float:right;
+						padding-top:0.25em;
+						//margin-left:auto;
+					}
+				}
+				ul{ 
+					&#innermenu{
+						display:none;
+						li{
+							a{
+								color:$color_text;
+								background-color:#ffffff;
+								@include menulistbox;
+								margin-bottom:1px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.about{
+		background-color:#ffffff;
+		font-size:1.2rem;
+		color:#ffffff;
+		.wrap1{
+			@include menulistbox;
+			img{
+				@include block-center;
+			}
+			.explain{
+				margin:1em 0;
+				color:$color_text;
+			}
+		}
+		.menu{
+			@include menulistbox;
+			background-color:$color_sub;
+		}
+		margin-bottom:0.5em;
+		a{
+			img{
+				margin-bottom:1em;
+			}
+		}
+	}
+	.info{
+		@extend .about
+	}
+}
+
+
+@media screen and (max-width: $media_smart_phone_width){
+	#sidebar{
+		width:100%;
+		float:none;
+		.searchwin{
+			margin-bottom:1.5em;
+			form{
+				dl{ 
+					dd{	
+						input{
+							position:absolute;
+							right:50px;
+							bottom:8px;
+						}
+					}
+				}
+			}
+		}
+		.sidemenu{
+
+		}
+		.about{
+			.wrap1{
+				img{
+					&.shopimg{
+						padding-right:0.8em;
+						float:left;
+					}
+				}
+				.explain{
+					margin:0;
+					margin-bottom:0.5em;
+				}
+				@include clearfix;
+			}
+		}
+		.info{
+			.wrap1{
+				img{
+					&.shopimg{
+						padding-right:0.8em;
+						float:left;
+					}
+				}
+				.explain{
+					margin:0;
+					margin-bottom:0.5em;
+				}
+				@include clearfix;
+			}
+		}
+	}
+}

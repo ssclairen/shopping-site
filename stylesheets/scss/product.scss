@@ -1,0 +1,339 @@
+/**********************************************************************************************************************************
+レイアウト定義用SASS
+ページ単位のCSS定義を行う
+PC-First
+**********************************************************************************************************************************/
+/*--------------------------------------------------------------------------------------------------------------
+エンコーディング定義
+--------------------------------------------------------------------------------------------------------------*/
+@charset "UTF-8";
+
+/*--------------------------------------------------------------------------------------------------------------
+システム共通定義インクルード
+--------------------------------------------------------------------------------------------------------------*/
+/* コンパスの基本機能を全部インポート */
+@import "compass";
+/* リセット用CSSをインポート */
+@import "compass/reset/";
+/* 汎用定数 */
+@import "common_variables";
+/* ヘッダー部共通レイアウト */
+@import "common_header";
+/* フッター部共通レイアウト */
+@import "common_footer";
+/* サイドバー共通レイアウト */
+@import "common_sidebar";
+/* ショッピングガイドレイアウト */
+@import "_common_sguide";
+/* コンテンツ部骨組み */
+@import "_l-contents";
+
+/* Google Font をインポート
+@import url(//fonts.googleapis.com/css?family=Abel);*/
+
+/*--------------------------------------------------------------------------------------------------------------
+全適用定義
+	プリンターを含む全てで適用される定義を記述。
+--------------------------------------------------------------------------------------------------------------*/
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+/*----------------------------------------------------------------------------------------------------------
+トップページ定義
+----------------------------------------------------------------------------------------------------------*/
+body{
+	#wrapper{
+		/* header
+		------------------------------------------------------------*/
+		// ヘッダー部
+		header{
+			//@import _common_header
+		}
+		/* contents
+		------------------------------------------------------------*/
+		// コンテンツ部
+		.contents{
+			.container{
+				#adv-pic-list{
+					max-width:700px;
+					
+				}
+				/* main contents
+				------------------------------------------------------------*/
+				// メインコンテンツ
+				main{
+					background-color:$color-main;
+					.detail{
+						width:90%;
+						margin:0 auto;
+						.detail-title{
+							margin-bottom:1em;
+							padding:2em 0;
+							border-bottom:1px $color_sub2 solid;
+							.left{
+								float:left;
+								font-size:1.4rem;
+								font-weight:bold;
+								color:$color_text;
+							}
+							.right{
+								float:right;
+								color:$color_sub;
+								font-size:1rem;
+							}
+							@include clearfix;
+						}
+						.pics{
+							margin-bottom:0.5em;
+							#mainpics{
+								float:left;
+								width:100%;
+								margin-right:-200px;
+								padding-right:180px;
+								img{
+									max-width:530px;
+								}
+							}
+							.otherpics{
+								width:180px;
+								height:100%;
+								float:right;
+								p{	
+									float:left;
+									margin:auto;
+									padding-left:10px;
+									width:50%;
+									img{
+										width:100%;
+										height:auto;
+									}
+								}@include clearfix;
+							}
+							@include clearfix;
+						}
+					    .inputform{
+					    	margin-bottom:2rem;
+					    	dl{
+					    		border-top:1px $color_sub2 solid;
+					    		padding:1em 0;
+					    		dt{	
+					    			text-align:left;
+					    			p{
+					    				color:$color_sub;
+					    				font-weight:bold;
+					    				font-size:1.6rem;
+					    				&.line{
+					    					border-bottom:2px $color_sub solid;
+					    					padding-bottom:1em;
+					    				}
+					    				img{
+					    					vertical-align:middle;
+					    				}
+					    			}
+					    		}
+					    		dd{
+					    			p{
+					    				margin-top:1em;
+					    				text-align:left;
+					    				margin-bottom:1em;
+					    				&.line{
+						    				color:$color_sub;
+						    				font-weight:bold;
+						    				font-size:1.6rem;
+					    				}
+					    			}
+					    			input{
+					    				border:solid 1px $color_sub2;
+					    			}
+					  				&.red{
+					    				color:#FE2EC8;
+					    				font-size:2.2rem;
+					    				font-style:oblique;
+					    				font-weight:bold;
+					    					span{
+					    						font-size:0.5em;
+					    					}
+					    			}
+					    		}
+					    		&.yoko{
+					    			dt{
+					    				float:left;
+					    			}
+					    			dd{
+					    				float:left;
+					    				padding-left:3em;
+					    			}
+					    			.rightimg{
+					    				float:right;
+					    				vertical-align:middle;
+					    			}
+					    			@include clearfix;
+					    		}
+					    	}
+					    	.forsp{
+					    		display:none;
+					    	}
+					    }
+					}
+					.main_popitems{
+						margin:1.6em 0;
+						img{
+							margin-bottom:1.0em;
+						}
+						.itembox{
+							float:left;
+							width:33.3%;
+							background-color:#ffffff;
+							border-right:$color_main solid 1px;
+							border-bottom:$color_main solid 1px;
+							padding:10px 5px;
+							p{
+								font-size:1.2rem;
+								text-align:left;
+								padding-bottom:1em;
+							}
+						}
+						@include clearfix;
+					}
+				}
+				/* ショッピングガイド
+				------------------------------------------------------------*/
+				// ショッピングガイド
+				.sguide{
+					//@import _common_sguide
+				}
+			}
+			/* sidebar
+			------------------------------------------------------------*/
+			// サブメニュー
+			#sidebar{
+				//@import _common_sidebar
+			}
+		}
+		/* footer
+		------------------------------------------------------------*/	
+		// フッター部
+		footer{
+			//@import _common_footer
+		}
+	}
+}
+
+/*----------------------------------------------------------------------------------------------------------
+その他の定義
+----------------------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------------------
+Ratina専用定義
+	画像や特殊文字を実装する場合にRatina用の設定を行う。
+----------------------------------------------------------------------------------------------------------*/
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx)
+{
+}
+
+/*--------------------------------------------------------------------------------------------------------------
+スマートフォン専用定義
+	注意事項：
+		プリンター等のディスプレイ以外には適用されない。
+--------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: $media_smart_phone_width){
+	body{
+		#wrapper{
+			/* header
+			------------------------------------------------------------*/
+			// ヘッダー部
+			header{
+				//@import _common_header
+			}
+			/* contents
+			------------------------------------------------------------*/
+			// コンテンツ部
+			.contents{
+				.container{
+					#adv-pic-list{
+					margin:10px auto;	//上下margin相殺10px
+					}
+					/* main contents
+					------------------------------------------------------------*/
+					// メインコンテンツ
+					main{
+						.main_popitems{
+							.itembox{
+								width:50%;
+							}
+						}
+						.detail{
+							.pics{
+								margin-bottom:0.5em;
+								#mainpics{
+									float:none;
+									width:100%;
+									margin-right:0px;
+									padding-right:0px;
+									img{
+										max-width:530px;
+									}
+								}
+								.otherpics{
+									width:100%;
+									height:100%;
+									float:none;
+									p{	
+										float:left;
+										margin:auto;
+										padding-left:0px;
+										width:20%;
+										img{
+											width:90%;
+											height:auto;
+										}
+									}@include clearfix;
+								}
+							}
+							.inputform{
+								p{
+									.forsp{
+					    				display:block;
+					    				margin:1em auto;
+					    			}
+								}
+				    			dl{
+				    				.rightimg{
+				    					display:none;
+				    				}
+				    			}
+							}
+						}
+					}
+					/* ショッピングガイド
+					------------------------------------------------------------*/
+					// ショッピングガイド
+					.sguide{
+						//@import _common_sguide
+					}
+				}
+				/* sidebar
+				------------------------------------------------------------*/
+				// サブメニュー
+				#sidebar{
+					//@import _common_sidebar
+				}
+			}
+			/* footer
+			------------------------------------------------------------*/	
+			// フッター部
+			footer{
+				//@import _common_footer
+			}
+		}
+	}
+
+	/*----------------------------------------------------------------------------------------------------------
+	Ratina専用定義
+		画像や特殊文字を実装する場合にRatina用の設定を行う。
+	----------------------------------------------------------------------------------------------------------*/
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx)
+	{
+	}
+}

@@ -1,0 +1,87 @@
+/* header
+------------------------------------------------------------*/
+// ヘッダー部
+header{
+	height:40px;	//=logoの高さ
+	margin:30px 0;
+	background-color: $color-main;
+	//左上ロゴ
+	.img{
+		float:left;
+	}
+	//Main Menu
+	.menu_block{
+		float: right;
+		height: 100%;
+		ul{
+			display: inline-block;
+			vertical-align: -1.4em;
+			color:$color_sub;
+			font-weight:bold;
+			li{
+				display: inline-block;
+				a{
+					font-size:1.3rem;
+					font-family:'arial black';
+					color:$color_sub;
+					padding-right:1em;
+				}
+			}
+		}
+	}
+		//Menu Link
+	.link{
+		float:right;
+		img{
+			vertical-align: -1.4em;
+			&.menuimg{
+				display:none;
+			}
+		}
+	}@include clearfix;
+}
+
+@media screen and (max-width: $media_smart_phone_width){
+	header{
+		.wraphead{
+			text-align:center;
+
+			//Main Menu
+			.menu_block{
+				display:none;
+				float: none;
+				height:auto;
+				ul{
+					vertical-align: 0;
+					z-index:100;
+					width: 180px;
+					position: absolute;
+					top:110px;
+					right:1%;
+					border: 1px solid #eee;
+					background: #ffffff;
+					li{
+						display: block;
+						text-align:left;
+						padding-left:1em;
+						a{
+							padding-right:0;
+						}
+					}
+				}
+			}
+			//Menu Link
+			.link{
+				float:none;
+				img{
+					vertical-align: 0;
+					&.menuimg{
+						display:inline;
+						max-width:20px;
+						height:auto;
+					}
+				}
+			}
+		}
+	}
+}

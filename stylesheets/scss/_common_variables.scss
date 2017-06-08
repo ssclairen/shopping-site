@@ -1,0 +1,198 @@
+/**********************************************************************************************************************************
+汎用定数定義SASS
+	汎用的に使用される定数を定義したSASS
+
+	注意事項：
+		ここで定義されるものは削除してはいけない。
+		本SASSは最初にインポートされる必要がある。
+		ここで定義されている定数をオーバーライドすることで挙動を変更できる。
+
+**********************************************************************************************************************************/
+/*--------------------------------------------------------------------------------------------------------------
+エンコーディング定義
+--------------------------------------------------------------------------------------------------------------*/
+@charset "UTF-8";
+
+/*--------------------------------------------------------------------------------------------------------------
+定数定義
+--------------------------------------------------------------------------------------------------------------*/
+	/*----------------------------------------------------------------------------------------------------------
+	メディア定義
+	----------------------------------------------------------------------------------------------------------*/
+	$media_smart_phone_width:						680px;					// スマートフォン横幅 最大定義
+	$media_desctop_width:								980px;					// デスクトップ横幅 最大定義
+	
+	/*----------------------------------------------------------------------------------------------------------
+	カラー定義
+	----------------------------------------------------------------------------------------------------------*/
+	$color_main:										#f9f8f6;					// 
+	$color_accent:									#9d1a2d;					// 
+	$color_sub: 										#887f69;					//
+	$color_sub2: 										#e2ddd4;					//
+	$color_sub3: 										#edebe6;					//
+	$color_text:                    #000000;          //
+	$color_white:                   #ffffff;          //
+
+	/*----------------------------------------------------------------------------------------------------------
+	フォント定義
+	----------------------------------------------------------------------------------------------------------*/	
+	$baseFontFamily :"ヒラギノ角ゴ ProN W6", Hiragino Kaku Gothic Pro, sans-serif;
+
+/*--------------------------------------------------------------------------------------------------------------
+BASE定義
+--------------------------------------------------------------------------------------------------------------*/
+
+html{ 
+  font-size: 62.5%; 
+  background-color:$color_main;
+}
+
+body{
+  color: $color_text;
+  font-size: 1.6rem;
+  font-family: $baseFontFamily;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  background-color: $color_main;
+  	
+  	#wrapper{
+		max-width:$media_desctop_width;
+		margin:0px auto;	//全体をcenter配置
+  	}
+}
+
+a {
+  text-decoration: none;
+  color:$color_text;
+}	
+
+//ウィンドウ幅に合わせて画像も可変
+img{
+	max-width:100%;
+	height:auto;
+}	
+
+@media screen and (max-width: $media_smart_phone_width){
+	body{
+			#wrapper{
+			max-width:$media_smart_phone_width;
+			margin:0px auto;	//全体をcenter配置
+	  	}
+	}
+}
+/*--------------------------------------------------------------------------------------------------------------
+関数定義
+--------------------------------------------------------------------------------------------------------------*/	
+	
+/*floatのクリア*/
+@mixin clearfix{
+		&:after {
+	    content: '';
+	    display: block;
+	    clear: both;
+		}
+	}
+
+/*センター配置*/
+//※親要素の高さが決まっている時のみ
+@mixin box_center()
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	@include translate( -50%, -50% );
+}
+
+@mixin menulistbox{
+	display:block;
+	margin-bottom:0.5em;
+	padding:1em;
+}
+
+@mixin block-center{
+	display: block;
+ 	margin-left: auto;
+ 	margin-right: auto;
+}
+
+
+.pc{
+	display: block !important;
+	margin:0 auto;
+}
+.sp {
+	display: none !important;
+}
+
+@media screen and (max-width: $media_smart_phone_width){
+	.pc{
+		display: none !important;
+	}
+    .sp{
+    	display: block !important;
+    	margin:0 auto;
+    }
+}
+
+p.btn{
+	background-color:$color_sub;
+	padding:0.5em 2em;
+	a{
+		color:white;
+		font-weight:bold;
+		font-size:1.4rem;
+	}
+}
+
+.pankuzu{
+	background-color:$color_sub2;
+	margin-bottom:10px;
+	padding:0.2em 2em;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px; 
+	border-radius:5px;
+	ul{
+		li{
+			float:left;
+			a{
+				font-size:1.1rem;
+				color:$color_sub;
+			}
+			&:not(:nth-child(1)){
+				&:before{
+					content:"　/　";
+					font-size:1.1rem;
+					color:$color_sub;
+				}
+			}
+			&:nth-child(1){
+				list-style-image: url(../../images/list/home_icon.png);
+			}
+		}@include clearfix;
+	}
+}
+
+table{
+	border:1px solid $color_sub2;
+	font-size:1.2rem;
+	font-weight:bold;
+	color:$color_sub;
+	width:100%;
+
+	tr{
+		td{
+			text-align:center;
+			padding:1em 0;
+			border:1px solid $color_sub2;
+		}
+		th{
+			text-align:center;
+			background-color:$color_sub3;
+			padding:1em 0;
+			border:1px solid $color_sub2;
+			&.habahiro{
+				width:33%;
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+/* footer
+------------------------------------------------------------*/	
+// フッター部
+footer{
+	margin:10px auto;
+	.linktotop{
+		text-align:right;
+		padding-bottom:0.6em;
+		border-bottom:solid 1px $color_sub;
+	}
+	.footerlist{
+		text-align:center;
+		margin-top:1.0em;	
+		ul{
+			width:100%;
+			li{
+				display: inline-block;
+				padding-right:0.5em;
+				font-size:1.2rem;
+				&:not(:nth-child(1)){
+					&:before{
+						font-size:0.2em;
+						content:"●　";
+					}
+				}
+			}
+		}
+	}
+	.copyright{
+		text-align:center;
+		margin:3em 0;
+		font-size:1.0rem;
+		color:$color_sub;
+	}
+}
+
+@media screen and (max-width: $media_smart_phone_width){
+	footer{
+		.linktotop{
+			text-align:center;
+		}
+	}
+}

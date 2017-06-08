@@ -1,0 +1,32 @@
+/* contents
+------------------------------------------------------------*/
+// コンテンツ部
+.contents{
+	@include clearfix;
+	margin:10px auto;	//上下margin相殺10px
+	.container{
+		float:left;
+		width:100%;
+		margin-right:-300px;
+		padding-right:270px;	//サイドバーサイズ
+		
+		/* main contents
+		------------------------------------------------------------*/
+		// メインコンテンツ
+		main{
+			width:100%;
+			margin-right:10px;
+			text-align: center;
+		}
+	}
+}
+
+@media screen and (max-width: $media_smart_phone_width){
+	.contents{
+		margin:10px 10px;
+		.container{
+			margin-right:0;
+			padding-right:0;	//サイドバーサイズ
+		}
+	}
+}
