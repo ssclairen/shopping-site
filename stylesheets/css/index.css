@@ -145,7 +145,7 @@ p.btn {
 .pankuzu {
   background-color: #e2ddd4;
   margin-bottom: 10px;
-  padding: 0.3em 2em;
+  padding: 0.2em 2em;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px; }
@@ -155,7 +155,7 @@ p.btn {
       font-size: 1.1rem;
       color: #887f69; }
     .pankuzu ul li:not(:nth-child(1)):before {
-      content: "/　";
+      content: "　/　";
       font-size: 1.1rem;
       color: #887f69; }
     .pankuzu ul li:nth-child(1) {
@@ -175,11 +175,16 @@ table {
     text-align: center;
     padding: 1em 0;
     border: 1px solid #e2ddd4; }
+    table tr td.tdleft {
+      text-align: left;
+      padding-left: 1em; }
   table tr th {
     text-align: center;
     background-color: #edebe6;
     padding: 1em 0;
     border: 1px solid #e2ddd4; }
+    table tr th.habahiro {
+      width: 33%; }
 
 /* ヘッダー部共通レイアウト */
 /* header
@@ -208,7 +213,8 @@ header {
   header .link {
     float: right; }
     header .link img {
-      vertical-align: -1.4em; }
+      vertical-align: -1.4em;
+      max-width: 20px; }
       header .link img.menuimg {
         display: none; }
   header:after {
@@ -217,35 +223,37 @@ header {
     clear: both; }
 
 @media screen and (max-width: 680px) {
-  header .wraphead {
-    text-align: center; }
-    header .wraphead .menu_block {
-      display: none;
-      float: none;
-      height: auto; }
-      header .wraphead .menu_block ul {
-        vertical-align: 0;
-        z-index: 100;
-        width: 180px;
-        position: absolute;
-        top: 110px;
-        right: 1%;
-        border: 1px solid #eee;
-        background: #ffffff; }
-        header .wraphead .menu_block ul li {
-          display: block;
-          text-align: left;
-          padding-left: 1em; }
-          header .wraphead .menu_block ul li a {
-            padding-right: 0; }
-    header .wraphead .link {
-      float: none; }
-      header .wraphead .link img {
-        vertical-align: 0; }
-        header .wraphead .link img.menuimg {
-          display: inline;
-          max-width: 20px;
-          height: auto; } }
+  header {
+    height: 80px; }
+    header .wraphead {
+      text-align: center; }
+      header .wraphead .menu_block {
+        display: none;
+        float: none;
+        height: auto; }
+        header .wraphead .menu_block ul {
+          vertical-align: 0;
+          z-index: 100;
+          width: 180px;
+          position: absolute;
+          top: 110px;
+          right: 1%;
+          border: 1px solid #eee;
+          background: #ffffff; }
+          header .wraphead .menu_block ul li {
+            display: block;
+            text-align: left;
+            padding-left: 1em; }
+            header .wraphead .menu_block ul li a {
+              padding-right: 0; }
+      header .wraphead .link {
+        float: none; }
+        header .wraphead .link img {
+          vertical-align: 0;
+          max-width: 40px; }
+          header .wraphead .link img.menuimg {
+            display: inline;
+            height: auto; } }
 /* フッター部共通レイアウト */
 /* footer
 ------------------------------------------------------------*/
@@ -266,7 +274,7 @@ footer {
         font-size: 1.2rem; }
         footer .footerlist ul li:not(:nth-child(1)):before {
           font-size: 0.2em;
-          content: "●　"; }
+          content: "・　"; }
   footer .copyright {
     text-align: center;
     margin: 3em 0;
@@ -298,11 +306,14 @@ footer {
         #sidebar .searchwin form dl dt input {
           display: block;
           width: 80%;
-          background-color: #f9f8f6;
+          background-color: #eeeeee;
           margin: 0 auto;
           font-size: 1.1rem;
+          font-style: oblique;
+          color: #cecece;
           padding: 0.5em 0;
-          padding-left: 0.5em; }
+          padding-left: 0.5em;
+          border: none; }
         #sidebar .searchwin form dl dd input {
           position: absolute;
           right: 30px;
@@ -346,6 +357,8 @@ footer {
       #sidebar .about .wrap1 .explain, #sidebar .info .wrap1 .explain {
         margin: 1em 0;
         color: #000000; }
+    #sidebar .about .wrap2, #sidebar .info .wrap2 {
+      text-align: center; }
     #sidebar .about .menu, #sidebar .info .menu {
       display: block;
       margin-bottom: 0.5em;
@@ -364,26 +377,34 @@ footer {
         position: absolute;
         right: 50px;
         bottom: 8px; }
-    #sidebar .about .wrap1 img.shopimg, #sidebar .info .wrap1 img.shopimg {
-      padding-right: 0.8em;
-      float: left; }
-    #sidebar .about .wrap1 .explain, #sidebar .info .wrap1 .explain {
-      margin: 0;
-      margin-bottom: 0.5em; }
-    #sidebar .about .wrap1:after, #sidebar .info .wrap1:after {
-      content: '';
-      display: block;
-      clear: both; }
-    #sidebar .info .wrap1 img.shopimg {
-      padding-right: 0.8em;
-      float: left; }
-    #sidebar .info .wrap1 .explain {
-      margin: 0;
-      margin-bottom: 0.5em; }
-    #sidebar .info .wrap1:after {
-      content: '';
-      display: block;
-      clear: both; } }
+    #sidebar .about .wrap1, #sidebar .info .wrap1 {
+      margin-bottom: 0;
+      padding-bottom: 0; }
+      #sidebar .about .wrap1 img.shopimg, #sidebar .info .wrap1 img.shopimg {
+        padding-right: 0.8em;
+        float: left; }
+      #sidebar .about .wrap1 .explain, #sidebar .info .wrap1 .explain {
+        margin: 0;
+        margin-bottom: 0.5em; }
+      #sidebar .about .wrap1:after, #sidebar .info .wrap1:after {
+        content: '';
+        display: block;
+        clear: both; }
+    #sidebar .about .wrap2, #sidebar .info .wrap2 {
+      padding-left: 40%; }
+    #sidebar .info .wrap1 {
+      margin-bottom: 0;
+      padding-bottom: 0; }
+      #sidebar .info .wrap1 img.shopimg {
+        padding-right: 0.8em;
+        float: left; }
+      #sidebar .info .wrap1 .explain {
+        margin: 0;
+        margin-bottom: 0.5em; }
+      #sidebar .info .wrap1:after {
+        content: '';
+        display: block;
+        clear: both; } }
 /* ショッピングガイドレイアウト */
 /* ショッピングガイド
 ------------------------------------------------------------*/
@@ -439,7 +460,7 @@ footer {
     float: left;
     width: 100%;
     margin-right: -300px;
-    padding-right: 270px;
+    padding-right: 280px;
     /* main contents
     ------------------------------------------------------------*/ }
     .contents .container main {
@@ -493,9 +514,11 @@ body #wrapper {
           float: left;
           margin-top: 10px; }
           body #wrapper .contents .container #adv-pic .owl-dots span {
-            width: 20px;
-            height: 5px;
+            width: 30px;
+            height: 3px;
             border-radius: 0px; }
+          body #wrapper .contents .container #adv-pic .owl-dots .active span {
+            background-color: #9d1a2d; }
         body #wrapper .contents .container #adv-pic:after {
           content: '';
           display: block;

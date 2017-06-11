@@ -184,6 +184,10 @@ table{
 			text-align:center;
 			padding:1em 0;
 			border:1px solid $color_sub2;
+			&.tdleft{
+				text-align:left;
+				padding-left:1em;
+			}
 		}
 		th{
 			text-align:center;

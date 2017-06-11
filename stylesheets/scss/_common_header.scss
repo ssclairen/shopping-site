@@ -34,6 +34,7 @@ header{
 		float:right;
 		img{
 			vertical-align: -1.4em;
+			max-width:20px;
 			&.menuimg{
 				display:none;
 			}
@@ -43,6 +44,7 @@ header{
 
 @media screen and (max-width: $media_smart_phone_width){
 	header{
+		height:80px;	//=logoの高さ
 		.wraphead{
 			text-align:center;
 
@@ -75,9 +77,10 @@ header{
 				float:none;
 				img{
 					vertical-align: 0;
+					max-width:40px;
 					&.menuimg{
 						display:inline;
-						max-width:20px;
+						//max-width:20px;
 						height:auto;
 					}
 				}

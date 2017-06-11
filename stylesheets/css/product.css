@@ -175,6 +175,9 @@ table {
     text-align: center;
     padding: 1em 0;
     border: 1px solid #e2ddd4; }
+    table tr td.tdleft {
+      text-align: left;
+      padding-left: 1em; }
   table tr th {
     text-align: center;
     background-color: #edebe6;
@@ -210,7 +213,8 @@ header {
   header .link {
     float: right; }
     header .link img {
-      vertical-align: -1.4em; }
+      vertical-align: -1.4em;
+      max-width: 20px; }
       header .link img.menuimg {
         display: none; }
   header:after {
@@ -219,35 +223,37 @@ header {
     clear: both; }
 
 @media screen and (max-width: 680px) {
-  header .wraphead {
-    text-align: center; }
-    header .wraphead .menu_block {
-      display: none;
-      float: none;
-      height: auto; }
-      header .wraphead .menu_block ul {
-        vertical-align: 0;
-        z-index: 100;
-        width: 180px;
-        position: absolute;
-        top: 110px;
-        right: 1%;
-        border: 1px solid #eee;
-        background: #ffffff; }
-        header .wraphead .menu_block ul li {
-          display: block;
-          text-align: left;
-          padding-left: 1em; }
-          header .wraphead .menu_block ul li a {
-            padding-right: 0; }
-    header .wraphead .link {
-      float: none; }
-      header .wraphead .link img {
-        vertical-align: 0; }
-        header .wraphead .link img.menuimg {
-          display: inline;
-          max-width: 20px;
-          height: auto; } }
+  header {
+    height: 80px; }
+    header .wraphead {
+      text-align: center; }
+      header .wraphead .menu_block {
+        display: none;
+        float: none;
+        height: auto; }
+        header .wraphead .menu_block ul {
+          vertical-align: 0;
+          z-index: 100;
+          width: 180px;
+          position: absolute;
+          top: 110px;
+          right: 1%;
+          border: 1px solid #eee;
+          background: #ffffff; }
+          header .wraphead .menu_block ul li {
+            display: block;
+            text-align: left;
+            padding-left: 1em; }
+            header .wraphead .menu_block ul li a {
+              padding-right: 0; }
+      header .wraphead .link {
+        float: none; }
+        header .wraphead .link img {
+          vertical-align: 0;
+          max-width: 40px; }
+          header .wraphead .link img.menuimg {
+            display: inline;
+            height: auto; } }
 /* フッター部共通レイアウト */
 /* footer
 ------------------------------------------------------------*/
@@ -268,7 +274,7 @@ footer {
         font-size: 1.2rem; }
         footer .footerlist ul li:not(:nth-child(1)):before {
           font-size: 0.2em;
-          content: "●　"; }
+          content: "・　"; }
   footer .copyright {
     text-align: center;
     margin: 3em 0;
@@ -300,11 +306,14 @@ footer {
         #sidebar .searchwin form dl dt input {
           display: block;
           width: 80%;
-          background-color: #f9f8f6;
+          background-color: #eeeeee;
           margin: 0 auto;
           font-size: 1.1rem;
+          font-style: oblique;
+          color: #cecece;
           padding: 0.5em 0;
-          padding-left: 0.5em; }
+          padding-left: 0.5em;
+          border: none; }
         #sidebar .searchwin form dl dd input {
           position: absolute;
           right: 30px;
@@ -348,6 +357,8 @@ footer {
       #sidebar .about .wrap1 .explain, #sidebar .info .wrap1 .explain {
         margin: 1em 0;
         color: #000000; }
+    #sidebar .about .wrap2, #sidebar .info .wrap2 {
+      text-align: center; }
     #sidebar .about .menu, #sidebar .info .menu {
       display: block;
       margin-bottom: 0.5em;
@@ -366,26 +377,34 @@ footer {
         position: absolute;
         right: 50px;
         bottom: 8px; }
-    #sidebar .about .wrap1 img.shopimg, #sidebar .info .wrap1 img.shopimg {
-      padding-right: 0.8em;
-      float: left; }
-    #sidebar .about .wrap1 .explain, #sidebar .info .wrap1 .explain {
-      margin: 0;
-      margin-bottom: 0.5em; }
-    #sidebar .about .wrap1:after, #sidebar .info .wrap1:after {
-      content: '';
-      display: block;
-      clear: both; }
-    #sidebar .info .wrap1 img.shopimg {
-      padding-right: 0.8em;
-      float: left; }
-    #sidebar .info .wrap1 .explain {
-      margin: 0;
-      margin-bottom: 0.5em; }
-    #sidebar .info .wrap1:after {
-      content: '';
-      display: block;
-      clear: both; } }
+    #sidebar .about .wrap1, #sidebar .info .wrap1 {
+      margin-bottom: 0;
+      padding-bottom: 0; }
+      #sidebar .about .wrap1 img.shopimg, #sidebar .info .wrap1 img.shopimg {
+        padding-right: 0.8em;
+        float: left; }
+      #sidebar .about .wrap1 .explain, #sidebar .info .wrap1 .explain {
+        margin: 0;
+        margin-bottom: 0.5em; }
+      #sidebar .about .wrap1:after, #sidebar .info .wrap1:after {
+        content: '';
+        display: block;
+        clear: both; }
+    #sidebar .about .wrap2, #sidebar .info .wrap2 {
+      padding-left: 40%; }
+    #sidebar .info .wrap1 {
+      margin-bottom: 0;
+      padding-bottom: 0; }
+      #sidebar .info .wrap1 img.shopimg {
+        padding-right: 0.8em;
+        float: left; }
+      #sidebar .info .wrap1 .explain {
+        margin: 0;
+        margin-bottom: 0.5em; }
+      #sidebar .info .wrap1:after {
+        content: '';
+        display: block;
+        clear: both; } }
 /* ショッピングガイドレイアウト */
 /* ショッピングガイド
 ------------------------------------------------------------*/
@@ -441,7 +460,7 @@ footer {
     float: left;
     width: 100%;
     margin-right: -300px;
-    padding-right: 270px;
+    padding-right: 280px;
     /* main contents
     ------------------------------------------------------------*/ }
     .contents .container main {
@@ -485,7 +504,7 @@ body #wrapper {
       body #wrapper .contents .container #adv-pic-list {
         max-width: 700px; }
       body #wrapper .contents .container main {
-        background-color: #f9f8f6; }
+        background-color: white; }
         body #wrapper .contents .container main .detail {
           width: 90%;
           margin: 0 auto; }
@@ -562,7 +581,7 @@ body #wrapper {
               body #wrapper .contents .container main .detail .inputform dl dd input {
                 border: solid 1px #e2ddd4; }
               body #wrapper .contents .container main .detail .inputform dl dd.red {
-                color: #FE2EC8;
+                color: #e91d6f;
                 font-size: 2.2rem;
                 font-style: oblique;
                 font-weight: bold; }
@@ -583,6 +602,7 @@ body #wrapper {
             body #wrapper .contents .container main .detail .inputform .forsp {
               display: none; }
         body #wrapper .contents .container main .main_popitems {
+          background-color: #f9f8f6;
           margin: 1.6em 0; }
           body #wrapper .contents .container main .main_popitems img {
             margin-bottom: 1.0em; }
@@ -601,6 +621,8 @@ body #wrapper {
             content: '';
             display: block;
             clear: both; }
+      body #wrapper .contents .container .sguide {
+        background-color: #f9f8f6; }
 
 /*----------------------------------------------------------------------------------------------------------
 その他の定義
@@ -635,7 +657,8 @@ Ratina専用定義
         body #wrapper .contents .container main .main_popitems .itembox {
           width: 50%; }
         body #wrapper .contents .container main .detail .pics {
-          margin-bottom: 0.5em; }
+          margin-bottom: 0.5em;
+          border-bottom: 1px #e2ddd4 solid; }
           body #wrapper .contents .container main .detail .pics #mainpics {
             float: none;
             width: 100%;
@@ -662,8 +685,11 @@ Ratina専用定義
         body #wrapper .contents .container main .detail .inputform p .forsp {
           display: block;
           margin: 1em auto; }
-        body #wrapper .contents .container main .detail .inputform dl .rightimg {
-          display: none; }
+        body #wrapper .contents .container main .detail .inputform dl {
+          border-top: none;
+          border-bottom: 1px #e2ddd4 solid; }
+          body #wrapper .contents .container main .detail .inputform dl .rightimg {
+            display: none; }
 
   /*----------------------------------------------------------------------------------------------------------
   Ratina専用定義

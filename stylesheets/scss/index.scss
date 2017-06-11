@@ -68,9 +68,13 @@ body{
 						float:left;
 						margin-top:10px;
 						span{
-							width:20px;height:5px;
+							width:30px;height:3px;
 							border-radius:0px;
-							
+						}
+						.active{
+							span{
+								background-color:#9d1a2d;
+							}
 						}
 						
 					}
